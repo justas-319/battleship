@@ -13,6 +13,38 @@ Justas Kurtinaitis, Edgar Dainarovič, Kamil Bužinski
 
 ## Projekto logika
 
+```
+START
+  ↓
+Inicializuoti žaidimą
+  ↓
+Sukurti žaidėjus
+  ↓
+Išdėstyti laivus
+  ↓
+WHILE (žaidimas nesibaigė):
+    ↓
+  Rodyti lenta (pagal žaidėją)
+    ↓
+  Dabartinis žaidėjas pasirenka veiksmą
+    ↓
+  Įvestis (koordinatės)
+    ↓
+  Tikrinti pataikymą
+    ↓
+  Atnaujinti lentą
+    ↓
+  Patikrinti ar visi laivai sunaikinti
+    ↓
+  Jei TAIP → GAME OVER
+    ↓
+  Jei NE → keisti žaidėją
+END WHILE
+  ↓
+Rodyti laimėtoją
+  ↓
+END
+```
 
 ## Naudojamos technologijos
 
