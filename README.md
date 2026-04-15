@@ -16,6 +16,7 @@ Justas Kurtinaitis, Edgar Dainarovič, Kamil Bužinski
 
 ## Naudojamos technologijos
 
+Grafiniam interfeisui: [Raylib](https://github.com/raysan5/raylib)
 
 ## Proof of concept
 
