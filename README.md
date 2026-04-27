@@ -17,10 +17,12 @@
 ![](https://github.com/justas-319/battleship/blob/main/use-case.drawio.png)
 ## Naudojamos technologijos
 
-Grafiniam interfeisui: [Raylib](https://github.com/raysan5/raylib)
+Grafiniam interfeisui: 
+- [Raylib](https://github.com/raysan5/raylib)
+
 Bendradarbiavimui: 
-1. [GitHub](github.com)
-2. [Discord](discord.com)
+- [GitHub](github.com)
+- [Discord](discord.com)
 
 ## Darbo apimtis
 Darbas buvo paskirstytas polygiai.
