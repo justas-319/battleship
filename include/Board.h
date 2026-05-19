@@ -16,9 +16,10 @@
 class Board {
 private:
   std::vector<Ship> ships; /**< An array of ships on the board. */
-  int grid[10][10];        /**< A 2D array representing the game board, where 0
-                              indicates an empty cell, 1 indicates a cell occupied by a
-                              ship, 2 indicates hit, and 3 indicates a miss. */
+  std::vector<std::vector<int>>
+      grid; /**< A 2D array representing the game board, where 0
+indicates an empty cell, 1 indicates a cell occupied by a
+ship, 2 indicates hit, and 3 indicates a miss. */
 public:
   /**
    * @brief Default constructor that initializes the board with default values.
@@ -50,5 +51,5 @@ public:
    *
    * @return A pointer to the 2D array representing the game board
    */
-  int **getGrid() const { return (int **)grid; }
+  std::vector<std::vector<int>> getGrid() const { return grid; }
 };

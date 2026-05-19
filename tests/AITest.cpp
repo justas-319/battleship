@@ -5,7 +5,7 @@ void testAI() {
 
   ai.setupGrid();
 
-  int** grid = ai.getMyGrid();
+  std::vector<std::vector<int>> grid = ai.getMyGrid();
 
   int occupied = 0;
 

@@ -6,8 +6,10 @@
 #include "../include/AI.h"
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
 
-// Standard Battleship fleet: Carrier(5), Battleship(4), Cruiser(3), Submarine(3), Destroyer(2)
+// Standard Battleship fleet: Carrier(5), Battleship(4), Cruiser(3),
+// Submarine(3), Destroyer(2)
 static const int SHIP_SIZES[] = {5, 4, 3, 3, 2};
 static const int SHIP_COUNT = 5;
 
@@ -20,7 +22,8 @@ void AI::setupGrid() {
     int size = SHIP_SIZES[i];
     bool placed = false;
     while (!placed) {
-      // Pick a random orientation: 0 = horizontal (along y), 1 = vertical (along x)
+      // Pick a random orientation: 0 = horizontal (along y), 1 = vertical
+      // (along x)
       bool horizontal = (std::rand() % 2) == 0;
       int startX, startY;
       if (horizontal) {

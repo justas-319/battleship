@@ -2,10 +2,10 @@
 #include <sstream>
 
 void testHuman() {
-  Human human;
 
+  Human human;
   std::istringstream input("3 4\n");
-  std::streambuf* oldCin = std::cin.rdbuf(input.rdbuf());
+  std::streambuf *oldCin = std::cin.rdbuf(input.rdbuf());
 
   Coordinates shot = human.fireShot();
 

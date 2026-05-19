@@ -8,7 +8,6 @@
 
 #include "Player.h"
 
-
 /**
  * @class AI
  * @brief Represents a computer-controlled player in a game of Battleship.

@@ -22,9 +22,9 @@
 class Player {
 protected:
   Board myBoard; /**< The player's own board, containing their ships. */
-  int targetGrid[10][10]; /**< Local tracking grid for shots fired at the opponent.
-                           0 = unknown, 2 = hit, 3 = miss (mirrors Board grid
-                           encoding). */
+  std::vector<std::vector<int>> targetGrid; /**< Local tracking grid for shots
+                           fired at the opponent. 0 = unknown, 2 = hit, 3 = miss
+                           (mirrors Board grid encoding). */
 
 public:
   /**
@@ -77,7 +77,7 @@ public:
    *
    * @return int** Pointer to the internal 2-D array of myBoard.
    */
-  int **getMyGrid() const;
+  std::vector<std::vector<int>> getMyGrid() const;
 
   /**
    * @brief Returns a pointer to the player's 10×10 target-tracking grid.
@@ -86,5 +86,5 @@ public:
    *
    * @return int** Pointer to the internal 2-D target grid array.
    */
-  int **getTargetGrid() const;
+  std::vector<std::vector<int>> getTargetGrid() const;
 };
