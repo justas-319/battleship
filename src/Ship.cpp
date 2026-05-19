@@ -6,9 +6,10 @@
 
 #include "../include/Ship.h"
 #include <algorithm>
+#include <cstdlib>
 
 Ship::Ship(Coordinates start, Coordinates end)
-    : isSunk(false), start(start), end(end) {
+    : isSunk(false), hitCount(0), start(start), end(end) {
   if (start.x > end.x) {
     std::swap(this->start.x, this->end.x);
   };
@@ -19,6 +20,7 @@ Ship::Ship(Coordinates start, Coordinates end)
 bool Ship::checkHit(Coordinates attack) {
   if ((attack.x >= start.x && attack.x <= end.x) &&
       (attack.y >= start.y && attack.y <= end.y)) {
+    hitCount++;
     return true;
   }
   return false;
@@ -27,13 +29,8 @@ bool Ship::getIsSunk() {
   if (isSunk) {
     return true;
   }
-  for (int i = start.x; i <= end.x; i++) {
-    for (int j = start.y; j <= end.y; j++) {
-      if (!checkHit({i, j})) {
-        return false; // If any part of the ship is not hit, it's not sunk
-      }
-    }
+  if (hitCount == abs(start.x - end.x) + abs(start.y - end.y) + 1) {
+    isSunk = true;
   }
-  isSunk = true; // All parts of the ship are hit, mark it as sunk
-  return true;
+  return isSunk;
 }

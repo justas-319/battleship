@@ -7,6 +7,7 @@
 #pragma once
 
 #include "Ship.h"
+#include <vector>
 
 /****
  * @class Board
@@ -14,10 +15,10 @@
  */
 class Board {
 private:
-  Ship ships[5];    /**< An array of ships on the board. */
-  int grid[10][10]; /**< A 2D array representing the game board, where 0
-                       indicates an empty cell, 1 indicates a cell occupied by a
-                       ship, 2 indicates hit, and 3 indicates a miss. */
+  std::vector<Ship> ships; /**< An array of ships on the board. */
+  int grid[10][10];        /**< A 2D array representing the game board, where 0
+                              indicates an empty cell, 1 indicates a cell occupied by a
+                              ship, 2 indicates hit, and 3 indicates a miss. */
 public:
   /**
    * @brief Default constructor that initializes the board with default values.
@@ -29,7 +30,13 @@ public:
    * @return true if the ship was successfully placed, false if the placement is
    * invalid (e.g., out of bounds or overlapping with another ship).
    */
-
+  /**
+   * @brief Destructor for the Board class. arrays and vectors will
+   * automatically clean up their memory, so no explicit cleanup is necessary in
+   * this destructor.
+   *
+   */
+  ~Board() = default;
   bool placeShip(Ship ship);
   /**
    * @brief Attacks the specified coordinates on the board.

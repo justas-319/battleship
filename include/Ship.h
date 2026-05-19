@@ -14,7 +14,8 @@
  */
 class Ship {
 private:
-  bool isSunk; /**< A flag indicating whether the ship has been sunk. */
+  bool isSunk;  /**< A flag indicating whether the ship has been sunk. */
+  int hitCount; /**< The number of hits the ship has taken. */
 public:
   Coordinates start; /**< The starting coordinates of the ship. */
   Coordinates end;   /**< The ending coordinates of the ship. */
@@ -22,8 +23,13 @@ public:
   /**
    * @brief Default constructor that initializes the ship with default values.
    */
-  Ship() : isSunk(false), start(), end() {};
-
+  Ship() : isSunk(false), hitCount(0), start(), end() {};
+  /**
+   * @brief Destructor for the Ship class. Since we are not dynamically
+   * allocating any memory in this class, we can use the default destructor
+   * provided by the compiler.
+   */
+  ~Ship() = default;
   /**
    * @brief Parameterized constructor that initializes the ship with the
    * specified starting and ending coordinates.
@@ -38,7 +44,6 @@ public:
    * @param attack The coordinates of the attack.
    * @return true if the attack hits the ship, false otherwise.
    */
-  ~Ship();
 
   bool checkHit(Coordinates attack);
   /**

@@ -15,17 +15,18 @@ Board::Board() {
 }
 
 bool Board::placeShip(Ship ship) {
+  if (ship.start.x < 0 || ship.start.x > 9 || ship.start.y < 0 ||
+      ship.start.y > 9 || ship.end.x < 0 || ship.end.x > 9 || ship.end.y < 0 ||
+      ship.end.y > 9) {
+    return false; // Out of bounds
+  }
+
   for (int i = ship.start.x; i <= ship.end.x; i++) {
     for (int j = ship.start.y; j <= ship.end.y; j++) {
       if (grid[i][j] != 0) {
         return false; // Overlapping with another ship
       }
     }
-  }
-  if (ship.start.x < 0 || ship.start.x > 9 || ship.start.y < 0 ||
-      ship.start.y > 9 || ship.end.x < 0 || ship.end.x > 9 || ship.end.y < 0 ||
-      ship.end.y > 9) {
-    return false; // Out of bounds
   }
   if (ship.start.x != ship.end.x && ship.start.y != ship.end.y) {
     return false; // diagonal line
@@ -35,6 +36,7 @@ bool Board::placeShip(Ship ship) {
       grid[i][j] = 1; // Mark the cells occupied by the ship
     }
   }
+  ships.push_back(ship);
   return true;
 }
 
