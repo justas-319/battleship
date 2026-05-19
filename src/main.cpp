@@ -9,4 +9,5 @@
 int main() {
     Game game;
     game.runSetup();
+    game.runGame();
 }

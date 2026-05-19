@@ -7,6 +7,7 @@
 #pragma once
 #include <../include/Human.h>
 #include <../include/AI.h>
+#include <../include/Player.h>
 #include <../include/Coordinates.h>
 #include <vector>
 /****
@@ -17,17 +18,35 @@
 class Game
 {
 private:
+    /**
+     * @brief prints out the given board parameter
+     * 
+     * @param board Players board
+     */
     void printBoard(std::vector<std::vector<int>> board);
-    // void aiSetup();
-    // void humanSetup();
+    /**
+     * @brief checks if there are alive ships on a given board
+     * 
+     * @param board Players board
+     * @return true there are alive ships
+     * @return false no alive ships are left
+     */
+    bool shipsAlive(std::vector<std::vector<int>> board);
     AI ai;
     Human human;
 
 public:
     // Game();
     // ~Game();
-
+    /**
+     * @brief runs thru ai and human board setup
+     * 
+     */
     void runSetup();
-    // void startGame();
+    /**
+     * @brief runs the game loop
+     * 
+     */
+    void runGame();
 
 };

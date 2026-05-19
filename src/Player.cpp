@@ -24,3 +24,13 @@ std::vector<std::vector<int>> Player::getMyGrid() const {
 std::vector<std::vector<int>> Player::getTargetGrid() const {
   return targetGrid;
 }
+
+
+  /**
+   * @brief wrapper for board::attack
+   * @param attack The coordinates of the attack.
+   * @return true if the attack hits a ship, false if it misses.
+   */
+bool Player::attacked(Coordinates attack) {
+  return myBoard.attack(attack);
+}

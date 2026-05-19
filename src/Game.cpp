@@ -1,3 +1,10 @@
+/**
+ * @file Game.cpp
+ * @brief Implementation of Game class
+ * 
+ */
+
+
 #include <../include/Game.h>
 #include <iostream>
 #include <vector>
@@ -13,7 +20,6 @@ void Game::runSetup() {
         while (!placed) {
             int startX, startY, endX, endY;
             int shipLenght = 0;
-            int horizontal = 0;
             std::cout << "Current ship's lenght: " << size << "\n";
             std::cout << "Please enter ship's start coordinates (e.g. 0 0): ";
             std::cin >> startX >> startY;
@@ -46,6 +52,46 @@ void Game::runSetup() {
     std::cout << "all the ships are placed. The game will begin.\n";
 }
 
+void Game::runGame() {
+    int gameEnded = 0;
+    while (!gameEnded) {
+        bool hit = 0;
+        Coordinates fireAt;
+        // human turn
+        std::cout << "Current board state:\n";
+        printBoard(human.getMyGrid());
+        std::cout << "chose where to attack:\n";
+        printBoard(human.getTargetGrid());
+        fireAt = human.fireShot();
+        hit = ai.attacked(fireAt);
+        human.updateTargetGrid(fireAt, hit);
+        if (hit) {
+            std::cout << "You have hit an enemy ship.\n";
+        }
+        else {
+            std::cout << "You missed.\n";
+        }
+        // ai turn
+        fireAt = ai.fireShot();
+        hit = human.attacked(fireAt);
+        ai.updateTargetGrid(fireAt, hit);
+        if (hit) {
+            std::cout << "AI has hit your ship.\n";
+        }
+        else {
+            std::cout << "AI missed.\n";
+        }
+        if (!shipsAlive(human.getMyGrid())) {
+            std::cout << "you lost.\n";
+            return;
+        }
+        if (!shipsAlive(ai.getMyGrid())) {
+            std::cout << "You won!\n";
+            return;
+        }
+    }
+}
+
 void Game::printBoard(std::vector<std::vector<int>> board) {
     for (int i = 0; i < 10; ++i) {
         for (int j = 0; j < 10; ++j) {
@@ -55,3 +101,13 @@ void Game::printBoard(std::vector<std::vector<int>> board) {
     }
 }
 
+bool Game::shipsAlive(std::vector<std::vector<int>> board) {
+    for (long unsigned int i = 0; i < board.size(); ++i) {
+        for (long unsigned int j = 0; j < board.at(i).size(); ++j) {
+            if (board.at(i).at(j) == 1) {
+                return true;
+            }
+        }
+    }
+    return false;
+}

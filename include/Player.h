@@ -87,4 +87,13 @@ public:
    * @return vector<vector<int>> internal 2-D target grid array.
    */
   std::vector<std::vector<int>> getTargetGrid() const;
+
+  /**
+   * @brief a wrapper for Board::attack, to be called if atacking this player
+   * 
+   * @param attack coordinates to be attacked
+   * @return true 
+   * @return false 
+   */
+  bool attacked(Coordinates attack);
 };
