@@ -44,4 +44,11 @@ public:
    * @return true if the attack hits a ship, false if it misses.
    */
   bool attack(Coordinates attack);
+
+  /**
+   * @brief Returns a pointer to the 2D array representing the game board
+   *
+   * @return A pointer to the 2D array representing the game board
+   */
+  int **getGrid() const { return (int **)grid; }
 };
