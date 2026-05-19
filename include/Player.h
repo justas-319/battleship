@@ -75,7 +75,7 @@ public:
    *
    * Grid encoding: 0 = empty, 1 = ship, 2 = hit, 3 = miss.
    *
-   * @return int** Pointer to the internal 2-D array of myBoard.
+   * @return vector<vector<int>> internal 2-D array of myBoard.
    */
   std::vector<std::vector<int>> getMyGrid() const;
 
@@ -84,7 +84,7 @@ public:
    *
    * Grid encoding: 0 = unknown, 2 = hit, 3 = miss.
    *
-   * @return int** Pointer to the internal 2-D target grid array.
+   * @return vector<vector<int>> internal 2-D target grid array.
    */
   std::vector<std::vector<int>> getTargetGrid() const;
 };
