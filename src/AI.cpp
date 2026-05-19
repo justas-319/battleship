@@ -6,7 +6,6 @@
 #include "../include/AI.h"
 #include <cstdlib>
 #include <ctime>
-#include <iostream>
 
 // Standard Battleship fleet: Carrier(5), Battleship(4), Cruiser(3),
 // Submarine(3), Destroyer(2)

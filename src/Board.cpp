@@ -24,6 +24,13 @@ bool Board::placeShip(Ship ship) {
       }
     }
   }
+  for (int i = ship.start.x - 1; i <= ship.end.x + 1; i++) {
+    for (int j = ship.start.y - 1; j <= ship.end.y + 1; j++) {
+      if (i >= 0 && i < 10 && j >= 0 && j < 10 && grid[i][j] != 0) {
+        return false; // Adjacent to another ship
+      }
+    }
+  }
   if (ship.start.x != ship.end.x && ship.start.y != ship.end.y) {
     return false; // diagonal line
   }
