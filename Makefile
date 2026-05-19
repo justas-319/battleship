@@ -3,12 +3,12 @@ CXXFLAGS = -std=c++17 -Wall -Wextra -Iinclude
 
 BUILD_DIR = build
 
-CORE_SRCS = src/Board.cpp src/Ship.cpp 
+CORE_SRCS = src/Board.cpp src/Ship.cpp src/AI.cpp src/Human.cpp src/Player.cpp
 
 MAIN_SRC = src/main.cpp
 GAME_TARGET = $(BUILD_DIR)/battleship
 
-TEST_SRCS = tests/test.cpp tests/BoardTest.cpp tests/ShipTest.cpp
+TEST_SRCS = tests/test.cpp tests/BoardTest.cpp tests/ShipTest.cpp tests/HumanTest.cpp tests/AITest.cpp
 TEST_TARGET = $(BUILD_DIR)/run_tests
 
 all: $(GAME_TARGET)
