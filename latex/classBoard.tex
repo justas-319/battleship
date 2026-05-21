@@ -1,0 +1,151 @@
+\doxysection{Board Class Reference}
+\hypertarget{classBoard}{}\label{classBoard}\index{Board@{Board}}
+
+
+{\ttfamily \+\#include $<$Board.\+h$>$}
+
+
+
+Collaboration diagram for Board:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classBoard__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classBoard_a9ee491d4fea680cf69b033374a9fdfcb}{Board}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor that initializes the board with default values. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classBoard_a8fbba57b4dc14d8d660b3c9ce248c441}{\texorpdfstring{$\sim$}{\string~}\+Board}} ()=default
+\begin{DoxyCompactList}\small\item\em Places a ship on the board at the specified coordinates. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classBoard_a4126ba53a45374c60bcd401f84d1d59d}{place\+Ship}} (\doxymbox{\hyperlink{classShip}{Ship}} ship)
+\item 
+bool \doxymbox{\hyperlink{classBoard_a55e7f2fe410e1c7dce6fb0bc3f580a33}{attack}} (\doxymbox{\hyperlink{structCoordinates}{Coordinates}} attack)
+\begin{DoxyCompactList}\small\item\em Attacks the specified coordinates on the board. \end{DoxyCompactList}\item 
+std::\+vector$<$ std::\+vector$<$ int $>$ $>$ \doxymbox{\hyperlink{classBoard_a4228a006fffbee5db728d866d4130a1b}{get\+Grid}} () const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the 2D array representing the game board. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classBoard_a88fdfecd5920f1742fb9f70976fd933e}{import\+From\+File}} (const std::\+string \&filename)
+\begin{DoxyCompactList}\small\item\em Imports the game board configuration from a file (file format -\/ coordinates of the ships). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+vector$<$ \doxymbox{\hyperlink{classShip}{Ship}} $>$ \doxymbox{\hyperlink{classBoard_a583a55f20598b44ef920f309ea36df4a}{ships}}
+\item 
+std::\+vector$<$ std::\+vector$<$ int $>$ $>$ \doxymbox{\hyperlink{classBoard_a23f8885f96bb2a5cfd5e1eff2c4129c9}{grid}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classBoard_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBoard_a9ee491d4fea680cf69b033374a9fdfcb}\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily \label{classBoard_a9ee491d4fea680cf69b033374a9fdfcb} 
+Board::\+\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor that initializes the board with default values. 
+
+\Hypertarget{classBoard_a8fbba57b4dc14d8d660b3c9ce248c441}\index{Board@{Board}!````~Board@{\texorpdfstring{$\sim$}{\string~}Board}}
+\index{````~Board@{\texorpdfstring{$\sim$}{\string~}Board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Board()}{\string~Board()}}
+{\footnotesize\ttfamily \label{classBoard_a8fbba57b4dc14d8d660b3c9ce248c441} 
+Board::\+\texorpdfstring{$\sim$}{\string~}\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Places a ship on the board at the specified coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ship} & The ship to be placed on the board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the ship was successfully placed, false if the placement is invalid (e.\+g., out of bounds or overlapping with another ship).
+\end{DoxyReturn}
+Destructor for the \doxylink{classBoard}{Board} class. arrays and vectors will automatically clean up their memory, so no explicit cleanup is necessary in this destructor. 
+
+\label{doc-func-members}
+\Hypertarget{classBoard_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBoard_a55e7f2fe410e1c7dce6fb0bc3f580a33}\index{Board@{Board}!attack@{attack}}
+\index{attack@{attack}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily \label{classBoard_a55e7f2fe410e1c7dce6fb0bc3f580a33} 
+bool Board::\+attack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structCoordinates}{Coordinates}}}]{attack}{}\end{DoxyParamCaption})}
+
+
+
+Attacks the specified coordinates on the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{classBoard_a55e7f2fe410e1c7dce6fb0bc3f580a33}{attack}} & The coordinates of the attack. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the attack hits a ship, false if it misses. 
+\end{DoxyReturn}
+\Hypertarget{classBoard_a4228a006fffbee5db728d866d4130a1b}\index{Board@{Board}!getGrid@{getGrid}}
+\index{getGrid@{getGrid}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getGrid()}{getGrid()}}
+{\footnotesize\ttfamily \label{classBoard_a4228a006fffbee5db728d866d4130a1b} 
+std::\+vector$<$ std::\+vector$<$ int $>$ $>$ Board::\+get\+Grid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a pointer to the 2D array representing the game board. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the 2D array representing the game board 
+\end{DoxyReturn}
+\Hypertarget{classBoard_a88fdfecd5920f1742fb9f70976fd933e}\index{Board@{Board}!importFromFile@{importFromFile}}
+\index{importFromFile@{importFromFile}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{importFromFile()}{importFromFile()}}
+{\footnotesize\ttfamily \label{classBoard_a88fdfecd5920f1742fb9f70976fd933e} 
+void Board::\+import\+From\+File (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Imports the game board configuration from a file (file format -\/ coordinates of the ships). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file containing the game board configuration. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBoard_a4126ba53a45374c60bcd401f84d1d59d}\index{Board@{Board}!placeShip@{placeShip}}
+\index{placeShip@{placeShip}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{placeShip()}{placeShip()}}
+{\footnotesize\ttfamily \label{classBoard_a4126ba53a45374c60bcd401f84d1d59d} 
+bool Board::\+place\+Ship (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classShip}{Ship}}}]{ship}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classBoard_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classBoard_a23f8885f96bb2a5cfd5e1eff2c4129c9}\index{Board@{Board}!grid@{grid}}
+\index{grid@{grid}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{grid}{grid}}
+{\footnotesize\ttfamily \label{classBoard_a23f8885f96bb2a5cfd5e1eff2c4129c9} 
+std::\+vector$<$std::\+vector$<$int$>$ $>$ Board::\+grid\hspace{0.3cm}{\ttfamily [private]}}
+
+A 2D array representing the game board, where 0 indicates an empty cell, 1 indicates a cell occupied by a ship, 2 indicates hit, and 3 indicates a miss. \Hypertarget{classBoard_a583a55f20598b44ef920f309ea36df4a}\index{Board@{Board}!ships@{ships}}
+\index{ships@{ships}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{ships}{ships}}
+{\footnotesize\ttfamily \label{classBoard_a583a55f20598b44ef920f309ea36df4a} 
+std::\+vector$<$\doxymbox{\hyperlink{classShip}{Ship}}$>$ Board::\+ships\hspace{0.3cm}{\ttfamily [private]}}
+
+An array of ships on the board. 
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\doxymbox{\hyperlink{Board_8h}{Board.\+h}}\item 
+src/\+\doxymbox{\hyperlink{Board_8cpp}{Board.\+cpp}}\end{DoxyCompactItemize}

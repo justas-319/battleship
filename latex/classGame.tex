@@ -1,0 +1,155 @@
+\doxysection{Game Class Reference}
+\hypertarget{classGame}{}\label{classGame}\index{Game@{Game}}
+
+
+{\ttfamily \+\#include $<$Game.\+h$>$}
+
+
+
+Collaboration diagram for Game:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGame__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classGame_ad3ae44789636b7aa630b9f9795757fce}{run\+Setup}} ()
+\begin{DoxyCompactList}\small\item\em runs thru ai and human board setup \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classGame_abc9436a9d18e48c6e1e4fbc4ea879449}{run\+Game}} ()
+\begin{DoxyCompactList}\small\item\em runs the game loop \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classGame_ae3eb72764e8199c7b99d9b457be75598}{print\+Board}} (std::\+vector$<$ std::\+vector$<$ int $>$ $>$ board)
+\begin{DoxyCompactList}\small\item\em prints out the given board parameter \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classGame_ac2cbb9e45974cac195fbac83ef16b5ba}{print\+Target\+Board}} (std::\+vector$<$ std::\+vector$<$ int $>$ $>$ board)
+\begin{DoxyCompactList}\small\item\em checks if there are alive ships on a given board \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classGame_aa16d8e95eec3704bc5eaf7e11d555cd3}{ships\+Alive}} (std::\+vector$<$ std::\+vector$<$ int $>$ $>$ board)
+\begin{DoxyCompactList}\small\item\em checks if there are alive ships on a given board \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classAI}{AI}} \doxymbox{\hyperlink{classGame_a00ef47ff92f5bad8c6424e2c62cae247}{ai}}
+\begin{DoxyCompactList}\small\item\em The \doxylink{classAI}{AI} player. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classHuman}{Human}} \doxymbox{\hyperlink{classGame_a32baff08321d705e1d82ab12e6442486}{human}}
+\begin{DoxyCompactList}\small\item\em The human player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classGame_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGame_ae3eb72764e8199c7b99d9b457be75598}\index{Game@{Game}!printBoard@{printBoard}}
+\index{printBoard@{printBoard}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{printBoard()}{printBoard()}}
+{\footnotesize\ttfamily \label{classGame_ae3eb72764e8199c7b99d9b457be75598} 
+void Game::\+print\+Board (\begin{DoxyParamCaption}\item[{std::\+vector$<$ std::\+vector$<$ int $>$ $>$}]{board}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+prints out the given board parameter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & Players board \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGame_ac2cbb9e45974cac195fbac83ef16b5ba}\index{Game@{Game}!printTargetBoard@{printTargetBoard}}
+\index{printTargetBoard@{printTargetBoard}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{printTargetBoard()}{printTargetBoard()}}
+{\footnotesize\ttfamily \label{classGame_ac2cbb9e45974cac195fbac83ef16b5ba} 
+void Game::\+print\+Target\+Board (\begin{DoxyParamCaption}\item[{std::\+vector$<$ std::\+vector$<$ int $>$ $>$}]{board}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if there are alive ships on a given board 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & Players board \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true there are alive ships 
+
+false no alive ships are left
+\end{DoxyReturn}
+prints out the given board parameter, but hides the ships
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGame_abc9436a9d18e48c6e1e4fbc4ea879449}\index{Game@{Game}!runGame@{runGame}}
+\index{runGame@{runGame}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{runGame()}{runGame()}}
+{\footnotesize\ttfamily \label{classGame_abc9436a9d18e48c6e1e4fbc4ea879449} 
+void Game::\+run\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+runs the game loop 
+
+\Hypertarget{classGame_ad3ae44789636b7aa630b9f9795757fce}\index{Game@{Game}!runSetup@{runSetup}}
+\index{runSetup@{runSetup}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{runSetup()}{runSetup()}}
+{\footnotesize\ttfamily \label{classGame_ad3ae44789636b7aa630b9f9795757fce} 
+void Game::\+run\+Setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+runs thru ai and human board setup 
+
+\Hypertarget{classGame_aa16d8e95eec3704bc5eaf7e11d555cd3}\index{Game@{Game}!shipsAlive@{shipsAlive}}
+\index{shipsAlive@{shipsAlive}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{shipsAlive()}{shipsAlive()}}
+{\footnotesize\ttfamily \label{classGame_aa16d8e95eec3704bc5eaf7e11d555cd3} 
+bool Game::\+ships\+Alive (\begin{DoxyParamCaption}\item[{std::\+vector$<$ std::\+vector$<$ int $>$ $>$}]{board}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+checks if there are alive ships on a given board 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true there are alive ships, else false 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{classGame_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGame_a00ef47ff92f5bad8c6424e2c62cae247}\index{Game@{Game}!ai@{ai}}
+\index{ai@{ai}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{ai}{ai}}
+{\footnotesize\ttfamily \label{classGame_a00ef47ff92f5bad8c6424e2c62cae247} 
+\doxymbox{\hyperlink{classAI}{AI}} Game::\+ai\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \doxylink{classAI}{AI} player. 
+
+\Hypertarget{classGame_a32baff08321d705e1d82ab12e6442486}\index{Game@{Game}!human@{human}}
+\index{human@{human}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{human}{human}}
+{\footnotesize\ttfamily \label{classGame_a32baff08321d705e1d82ab12e6442486} 
+\doxymbox{\hyperlink{classHuman}{Human}} Game::\+human\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The human player. 
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\doxymbox{\hyperlink{Game_8h}{Game.\+h}}\item 
+src/\+\doxymbox{\hyperlink{Game_8cpp}{Game.\+cpp}}\end{DoxyCompactItemize}

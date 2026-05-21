@@ -1,0 +1,31 @@
+\doxysection{Ship.\+h}
+\hypertarget{Ship_8h_source}{}\label{Ship_8h_source}\index{include/Ship.h@{include/Ship.h}}
+\doxymbox{\hyperlink{Ship_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Coordinates_8h}{Coordinates.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{/****}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ @class\ Ship}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ @brief\ Represents\ a\ ship\ in\ a\ game\ of\ Battleship.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classShip_ab7608fcfc4d27c678aacaf9bfd68a462}{Ship}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classShip_aaaabb82c07f6f1f8131aecbf0ce7cd06}{isSunk}};\ \ }
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classShip_a9968f30568eb8c664c5140db12ba8396}{hitCount}};\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \doxymbox{\hyperlink{structCoordinates}{Coordinates}}\ \doxymbox{\hyperlink{classShip_a777572bcf5f177af0fdc69f2c42bd69a}{start}};\ }
+\DoxyCodeLine{00021\ \ \ \doxymbox{\hyperlink{structCoordinates}{Coordinates}}\ \doxymbox{\hyperlink{classShip_a70f24757beb04faad142d4654eb82dd5}{end}};\ \ \ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \doxymbox{\hyperlink{classShip_ab7608fcfc4d27c678aacaf9bfd68a462}{Ship}}()\ :\ \doxymbox{\hyperlink{classShip_aaaabb82c07f6f1f8131aecbf0ce7cd06}{isSunk}}(false),\ \doxymbox{\hyperlink{classShip_a9968f30568eb8c664c5140db12ba8396}{hitCount}}(0),\ \doxymbox{\hyperlink{classShip_a777572bcf5f177af0fdc69f2c42bd69a}{start}}(),\ \doxymbox{\hyperlink{classShip_a70f24757beb04faad142d4654eb82dd5}{end}}()\ \{\};}
+\DoxyCodeLine{00032\ \ \ \doxymbox{\hyperlink{classShip_a780b086f48cd810ce7d83f36a731e3f7}{\string~Ship}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00040\ \ \ \doxymbox{\hyperlink{classShip_ab7608fcfc4d27c678aacaf9bfd68a462}{Ship}}(\doxymbox{\hyperlink{structCoordinates}{Coordinates}}\ \doxymbox{\hyperlink{classShip_a777572bcf5f177af0fdc69f2c42bd69a}{start}},\ \doxymbox{\hyperlink{structCoordinates}{Coordinates}}\ \doxymbox{\hyperlink{classShip_a70f24757beb04faad142d4654eb82dd5}{end}});}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classShip_ac1c517f511a1dd1f8c2940d0efd012b5}{checkHit}}(\doxymbox{\hyperlink{structCoordinates}{Coordinates}}\ attack);}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classShip_aaef5cf456fb87e38dd418f09f8cd177c}{getIsSunk}}();}
+\DoxyCodeLine{00055\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,156 @@
+\doxysection{Ship Class Reference}
+\hypertarget{classShip}{}\label{classShip}\index{Ship@{Ship}}
+
+
+{\ttfamily \+\#include $<$Ship.\+h$>$}
+
+
+
+Collaboration diagram for Ship:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classShip__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classShip_ab7608fcfc4d27c678aacaf9bfd68a462}{Ship}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor that initializes the ship with default values. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classShip_a780b086f48cd810ce7d83f36a731e3f7}{\texorpdfstring{$\sim$}{\string~}\+Ship}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classShip}{Ship} class. Since we are not dynamically allocating any memory in this class, we can use the default destructor provided by the compiler. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classShip_acca3366403b3acb6d3237283bb7777b9}{Ship}} (\doxymbox{\hyperlink{structCoordinates}{Coordinates}} \doxymbox{\hyperlink{classShip_a777572bcf5f177af0fdc69f2c42bd69a}{start}}, \doxymbox{\hyperlink{structCoordinates}{Coordinates}} \doxymbox{\hyperlink{classShip_a70f24757beb04faad142d4654eb82dd5}{end}})
+\begin{DoxyCompactList}\small\item\em Parameterized constructor that initializes the ship with the specified starting and ending coordinates. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classShip_ac1c517f511a1dd1f8c2940d0efd012b5}{check\+Hit}} (\doxymbox{\hyperlink{structCoordinates}{Coordinates}} attack)
+\begin{DoxyCompactList}\small\item\em Checks if the given attack coordinates hit the ship. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classShip_aaef5cf456fb87e38dd418f09f8cd177c}{get\+Is\+Sunk}} ()
+\begin{DoxyCompactList}\small\item\em Returns whether the ship has been sunk. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structCoordinates}{Coordinates}} \doxymbox{\hyperlink{classShip_a777572bcf5f177af0fdc69f2c42bd69a}{start}}
+\item 
+\doxymbox{\hyperlink{structCoordinates}{Coordinates}} \doxymbox{\hyperlink{classShip_a70f24757beb04faad142d4654eb82dd5}{end}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classShip_aaaabb82c07f6f1f8131aecbf0ce7cd06}{is\+Sunk}}
+\item 
+int \doxymbox{\hyperlink{classShip_a9968f30568eb8c664c5140db12ba8396}{hit\+Count}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classShip_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classShip_ab7608fcfc4d27c678aacaf9bfd68a462}\index{Ship@{Ship}!Ship@{Ship}}
+\index{Ship@{Ship}!Ship@{Ship}}
+\doxysubsubsection{\texorpdfstring{Ship()}{Ship()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classShip_ab7608fcfc4d27c678aacaf9bfd68a462} 
+Ship::\+\+Ship (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor that initializes the ship with default values. 
+
+\Hypertarget{classShip_a780b086f48cd810ce7d83f36a731e3f7}\index{Ship@{Ship}!````~Ship@{\texorpdfstring{$\sim$}{\string~}Ship}}
+\index{````~Ship@{\texorpdfstring{$\sim$}{\string~}Ship}!Ship@{Ship}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Ship()}{\string~Ship()}}
+{\footnotesize\ttfamily \label{classShip_a780b086f48cd810ce7d83f36a731e3f7} 
+Ship::\+\texorpdfstring{$\sim$}{\string~}\+Ship (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor for the \doxylink{classShip}{Ship} class. Since we are not dynamically allocating any memory in this class, we can use the default destructor provided by the compiler. 
+
+\Hypertarget{classShip_acca3366403b3acb6d3237283bb7777b9}\index{Ship@{Ship}!Ship@{Ship}}
+\index{Ship@{Ship}!Ship@{Ship}}
+\doxysubsubsection{\texorpdfstring{Ship()}{Ship()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classShip_acca3366403b3acb6d3237283bb7777b9} 
+Ship::\+\+Ship (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structCoordinates}{Coordinates}}}]{start}{, }\item[{\doxymbox{\hyperlink{structCoordinates}{Coordinates}}}]{end}{}\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor that initializes the ship with the specified starting and ending coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{classShip_a777572bcf5f177af0fdc69f2c42bd69a}{start}} & \\
+\hline
+{\em \doxylink{classShip_a70f24757beb04faad142d4654eb82dd5}{end}} & \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classShip_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classShip_ac1c517f511a1dd1f8c2940d0efd012b5}\index{Ship@{Ship}!checkHit@{checkHit}}
+\index{checkHit@{checkHit}!Ship@{Ship}}
+\doxysubsubsection{\texorpdfstring{checkHit()}{checkHit()}}
+{\footnotesize\ttfamily \label{classShip_ac1c517f511a1dd1f8c2940d0efd012b5} 
+bool Ship::\+check\+Hit (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structCoordinates}{Coordinates}}}]{attack}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the given attack coordinates hit the ship. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attack} & The coordinates of the attack. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the attack hits the ship, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classShip_aaef5cf456fb87e38dd418f09f8cd177c}\index{Ship@{Ship}!getIsSunk@{getIsSunk}}
+\index{getIsSunk@{getIsSunk}!Ship@{Ship}}
+\doxysubsubsection{\texorpdfstring{getIsSunk()}{getIsSunk()}}
+{\footnotesize\ttfamily \label{classShip_aaef5cf456fb87e38dd418f09f8cd177c} 
+bool Ship::\+get\+Is\+Sunk (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns whether the ship has been sunk. 
+
+\begin{DoxyReturn}{Returns}
+true if the ship has been sunk, false otherwise. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{classShip_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classShip_a70f24757beb04faad142d4654eb82dd5}\index{Ship@{Ship}!end@{end}}
+\index{end@{end}!Ship@{Ship}}
+\doxysubsubsection{\texorpdfstring{end}{end}}
+{\footnotesize\ttfamily \label{classShip_a70f24757beb04faad142d4654eb82dd5} 
+\doxymbox{\hyperlink{structCoordinates}{Coordinates}} Ship::\+end}
+
+The ending coordinates of the ship. \Hypertarget{classShip_a9968f30568eb8c664c5140db12ba8396}\index{Ship@{Ship}!hitCount@{hitCount}}
+\index{hitCount@{hitCount}!Ship@{Ship}}
+\doxysubsubsection{\texorpdfstring{hitCount}{hitCount}}
+{\footnotesize\ttfamily \label{classShip_a9968f30568eb8c664c5140db12ba8396} 
+int Ship::\+hit\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+The number of hits the ship has taken. \Hypertarget{classShip_aaaabb82c07f6f1f8131aecbf0ce7cd06}\index{Ship@{Ship}!isSunk@{isSunk}}
+\index{isSunk@{isSunk}!Ship@{Ship}}
+\doxysubsubsection{\texorpdfstring{isSunk}{isSunk}}
+{\footnotesize\ttfamily \label{classShip_aaaabb82c07f6f1f8131aecbf0ce7cd06} 
+bool Ship::\+is\+Sunk\hspace{0.3cm}{\ttfamily [private]}}
+
+A flag indicating whether the ship has been sunk. \Hypertarget{classShip_a777572bcf5f177af0fdc69f2c42bd69a}\index{Ship@{Ship}!start@{start}}
+\index{start@{start}!Ship@{Ship}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily \label{classShip_a777572bcf5f177af0fdc69f2c42bd69a} 
+\doxymbox{\hyperlink{structCoordinates}{Coordinates}} Ship::\+start}
+
+The starting coordinates of the ship. 
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\doxymbox{\hyperlink{Ship_8h}{Ship.\+h}}\item 
+src/\+\doxymbox{\hyperlink{Ship_8cpp}{Ship.\+cpp}}\end{DoxyCompactItemize}

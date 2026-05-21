@@ -1,0 +1,252 @@
+\doxysection{Player Class Reference}
+\hypertarget{classPlayer}{}\label{classPlayer}\index{Player@{Player}}
+
+
+Abstract base class representing a player in a game of Battleship.  
+
+
+
+
+{\ttfamily \+\#include $<$Player.\+h$>$}
+
+
+
+Inheritance diagram for Player:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classPlayer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Player:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classPlayer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classPlayer_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initialises the target grid to all zeros (no shots fired yet). \end{DoxyCompactList}\item 
+virtual \doxymbox{\hyperlink{classPlayer_a11017c0ed8a639f3b1308ab167fbeca2}{\texorpdfstring{$\sim$}{\string~}\+Player}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Derived classes clean up their own resources. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classPlayer_accd6141e9fc387a92cf4c8e4369b39a2}{place\+Ship}} (\doxymbox{\hyperlink{classShip}{Ship}} ship)
+\begin{DoxyCompactList}\small\item\em Attempts to place a ship on the player\textquotesingle{}s own board. \end{DoxyCompactList}\item 
+virtual \doxymbox{\hyperlink{structCoordinates}{Coordinates}} \doxymbox{\hyperlink{classPlayer_a1bad3a553a1f0147e46ca8d16a173eb4}{fire\+Shot}} ()=0
+\begin{DoxyCompactList}\small\item\em Selects the coordinates for the next attack on the opponent\textquotesingle{}s board. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPlayer_a8ce8390064c6ee6e7bf10e5320b208d7}{update\+Target\+Grid}} (\doxymbox{\hyperlink{structCoordinates}{Coordinates}} coords, bool hit)
+\begin{DoxyCompactList}\small\item\em Records the outcome of a shot on the target grid. \end{DoxyCompactList}\item 
+std::\+vector$<$ std::\+vector$<$ int $>$ $>$ \doxymbox{\hyperlink{classPlayer_ab931285e13cc1a8ccf58dd1d27f6f70a}{get\+My\+Grid}} () const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the player\textquotesingle{}s own 10×10 board grid. \end{DoxyCompactList}\item 
+std::\+vector$<$ std::\+vector$<$ int $>$ $>$ \doxymbox{\hyperlink{classPlayer_a66478f94a2de2981544b0fd945c3c764}{get\+Target\+Grid}} () const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the player\textquotesingle{}s 10×10 target-\/tracking grid. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classPlayer_ac7055f6314918c58361b17ed2e219b12}{attacked}} (\doxymbox{\hyperlink{structCoordinates}{Coordinates}} attack)
+\begin{DoxyCompactList}\small\item\em a wrapper for \doxylink{classBoard_a55e7f2fe410e1c7dce6fb0bc3f580a33}{Board::\+attack}, to be called if atacking this player \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classPlayer_a77bddddb1e5424a279370deb8313988f}{import\+Board\+From\+File}} (const std::\+string \&filename)
+\begin{DoxyCompactList}\small\item\em Imports the player\textquotesingle{}s board configuration from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classBoard}{Board}} \doxymbox{\hyperlink{classPlayer_a4e2b1c45205ce032b1d4ce63d2cf5ccf}{my\+Board}}
+\item 
+std::\+vector$<$ std::\+vector$<$ int $>$ $>$ \doxymbox{\hyperlink{classPlayer_a9251aba1cad488d1a453368c2ddcf180}{target\+Grid}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a player in a game of Battleship. 
+
+Holds the player\textquotesingle{}s own board (where their ships reside) and a target grid (a local record of shots fired at the opponent\textquotesingle{}s board). Concrete subclasses must implement \doxylink{classPlayer_a1bad3a553a1f0147e46ca8d16a173eb4}{fire\+Shot()}, which differs between a \doxylink{classHuman}{Human} (user input) and an \doxylink{classAI}{AI} (automated selection). 
+
+\label{doc-constructors}
+\Hypertarget{classPlayer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPlayer_affe0cc3cb714f6deb4e62f0c0d3f1fd8}\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily \label{classPlayer_affe0cc3cb714f6deb4e62f0c0d3f1fd8} 
+Player::\+\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. Initialises the target grid to all zeros (no shots fired yet). 
+
+\Hypertarget{classPlayer_a11017c0ed8a639f3b1308ab167fbeca2}\index{Player@{Player}!````~Player@{\texorpdfstring{$\sim$}{\string~}Player}}
+\index{````~Player@{\texorpdfstring{$\sim$}{\string~}Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Player()}{\string~Player()}}
+{\footnotesize\ttfamily \label{classPlayer_a11017c0ed8a639f3b1308ab167fbeca2} 
+virtual Player::\+\texorpdfstring{$\sim$}{\string~}\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. Derived classes clean up their own resources. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{classPlayer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPlayer_ac7055f6314918c58361b17ed2e219b12}\index{Player@{Player}!attacked@{attacked}}
+\index{attacked@{attacked}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{attacked()}{attacked()}}
+{\footnotesize\ttfamily \label{classPlayer_ac7055f6314918c58361b17ed2e219b12} 
+bool Player::\+attacked (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structCoordinates}{Coordinates}}}]{attack}{}\end{DoxyParamCaption})}
+
+
+
+a wrapper for \doxylink{classBoard_a55e7f2fe410e1c7dce6fb0bc3f580a33}{Board::\+attack}, to be called if atacking this player 
+
+wrapper for board::\+attack
+
+
+\begin{DoxyParams}{Parameters}
+{\em attack} & coordinates to be attacked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em attack} & The coordinates of the attack. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the attack hits a ship, false if it misses. 
+\end{DoxyReturn}
+\Hypertarget{classPlayer_a1bad3a553a1f0147e46ca8d16a173eb4}\index{Player@{Player}!fireShot@{fireShot}}
+\index{fireShot@{fireShot}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{fireShot()}{fireShot()}}
+{\footnotesize\ttfamily \label{classPlayer_a1bad3a553a1f0147e46ca8d16a173eb4} 
+virtual \doxymbox{\hyperlink{structCoordinates}{Coordinates}} Player::\+fire\+Shot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Selects the coordinates for the next attack on the opponent\textquotesingle{}s board. 
+
+Pure virtual — \doxylink{classHuman}{Human} reads from user input; \doxylink{classAI}{AI} computes a target automatically.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structCoordinates}{Coordinates} The cell to attack on the opponent\textquotesingle{}s board. 
+\end{DoxyReturn}
+
+
+Implemented in \doxymbox{\hyperlink{classAI_a2f51f6c43d2a59bc665a138a9a0a325d}{AI}}, and \doxymbox{\hyperlink{classHuman_affc06c5134411acff677ef3679a9bf05}{Human}}.
+
+\Hypertarget{classPlayer_ab931285e13cc1a8ccf58dd1d27f6f70a}\index{Player@{Player}!getMyGrid@{getMyGrid}}
+\index{getMyGrid@{getMyGrid}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getMyGrid()}{getMyGrid()}}
+{\footnotesize\ttfamily \label{classPlayer_ab931285e13cc1a8ccf58dd1d27f6f70a} 
+std::\+vector$<$ std::\+vector$<$ int $>$ $>$ Player::\+get\+My\+Grid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a pointer to the player\textquotesingle{}s own 10×10 board grid. 
+
+Grid encoding:\+ 0 = empty, 1 = ship, 2 = hit, 3 = miss.
+
+\begin{DoxyReturn}{Returns}
+vector$<$vector$<$int$>$$>$ internal 2-\/D array of my\+Board. 
+\end{DoxyReturn}
+\Hypertarget{classPlayer_a66478f94a2de2981544b0fd945c3c764}\index{Player@{Player}!getTargetGrid@{getTargetGrid}}
+\index{getTargetGrid@{getTargetGrid}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getTargetGrid()}{getTargetGrid()}}
+{\footnotesize\ttfamily \label{classPlayer_a66478f94a2de2981544b0fd945c3c764} 
+std::\+vector$<$ std::\+vector$<$ int $>$ $>$ Player::\+get\+Target\+Grid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a pointer to the player\textquotesingle{}s 10×10 target-\/tracking grid. 
+
+Grid encoding:\+ 0 = unknown, 2 = hit, 3 = miss.
+
+\begin{DoxyReturn}{Returns}
+vector$<$vector$<$int$>$$>$ internal 2-\/D target grid array. 
+\end{DoxyReturn}
+\Hypertarget{classPlayer_a77bddddb1e5424a279370deb8313988f}\index{Player@{Player}!importBoardFromFile@{importBoardFromFile}}
+\index{importBoardFromFile@{importBoardFromFile}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{importBoardFromFile()}{importBoardFromFile()}}
+{\footnotesize\ttfamily \label{classPlayer_a77bddddb1e5424a279370deb8313988f} 
+void Player::\+import\+Board\+From\+File (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Imports the player\textquotesingle{}s board configuration from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file containing the board configuration (ship placements). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPlayer_accd6141e9fc387a92cf4c8e4369b39a2}\index{Player@{Player}!placeShip@{placeShip}}
+\index{placeShip@{placeShip}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{placeShip()}{placeShip()}}
+{\footnotesize\ttfamily \label{classPlayer_accd6141e9fc387a92cf4c8e4369b39a2} 
+bool Player::\+place\+Ship (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classShip}{Ship}}}]{ship}{}\end{DoxyParamCaption})}
+
+
+
+Attempts to place a ship on the player\textquotesingle{}s own board. 
+
+Delegates to \doxylink{classBoard_a4126ba53a45374c60bcd401f84d1d59d}{Board::\+place\+Ship}, which validates bounds and overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ship} & The ship to place (start/\+end coordinates must already be set). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the ship was placed successfully. 
+
+false if the placement is invalid (out of bounds or overlapping). 
+\end{DoxyReturn}
+\Hypertarget{classPlayer_a8ce8390064c6ee6e7bf10e5320b208d7}\index{Player@{Player}!updateTargetGrid@{updateTargetGrid}}
+\index{updateTargetGrid@{updateTargetGrid}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{updateTargetGrid()}{updateTargetGrid()}}
+{\footnotesize\ttfamily \label{classPlayer_a8ce8390064c6ee6e7bf10e5320b208d7} 
+void Player::\+update\+Target\+Grid (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structCoordinates}{Coordinates}}}]{coords}{, }\item[{bool}]{hit}{}\end{DoxyParamCaption})}
+
+
+
+Records the outcome of a shot on the target grid. 
+
+Should be called after the opponent\textquotesingle{}s \doxylink{classBoard_a55e7f2fe410e1c7dce6fb0bc3f580a33}{Board::\+attack()} returns so that the player\textquotesingle{}s local view stays in sync with the opponent\textquotesingle{}s board state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em coords} & The cell that was attacked. \\
+\hline
+{\em hit} & true if the shot hit a ship, false if it missed. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{classPlayer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPlayer_a4e2b1c45205ce032b1d4ce63d2cf5ccf}\index{Player@{Player}!myBoard@{myBoard}}
+\index{myBoard@{myBoard}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{myBoard}{myBoard}}
+{\footnotesize\ttfamily \label{classPlayer_a4e2b1c45205ce032b1d4ce63d2cf5ccf} 
+\doxymbox{\hyperlink{classBoard}{Board}} Player::\+my\+Board\hspace{0.3cm}{\ttfamily [protected]}}
+
+The player\textquotesingle{}s own board, containing their ships. \Hypertarget{classPlayer_a9251aba1cad488d1a453368c2ddcf180}\index{Player@{Player}!targetGrid@{targetGrid}}
+\index{targetGrid@{targetGrid}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{targetGrid}{targetGrid}}
+{\footnotesize\ttfamily \label{classPlayer_a9251aba1cad488d1a453368c2ddcf180} 
+std::\+vector$<$std::\+vector$<$int$>$ $>$ Player::\+target\+Grid\hspace{0.3cm}{\ttfamily [protected]}}
+
+Local tracking grid for shots fired at the opponent. 0 = unknown, 2 = hit, 3 = miss (mirrors \doxylink{classBoard}{Board} grid encoding). 
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\doxymbox{\hyperlink{Player_8h}{Player.\+h}}\item 
+src/\+\doxymbox{\hyperlink{Player_8cpp}{Player.\+cpp}}\end{DoxyCompactItemize}

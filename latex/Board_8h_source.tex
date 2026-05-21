@@ -1,0 +1,33 @@
+\doxysection{Board.\+h}
+\hypertarget{Board_8h_source}{}\label{Board_8h_source}\index{include/Board.h@{include/Board.h}}
+\doxymbox{\hyperlink{Board_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Ship_8h}{Ship.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{/****}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ @class\ Board}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ @brief\ Represents\ the\ game\ board\ in\ a\ game\ of\ Battleship.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classBoard_a9ee491d4fea680cf69b033374a9fdfcb}{Board}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ std::vector<Ship>\ \doxymbox{\hyperlink{classBoard_a583a55f20598b44ef920f309ea36df4a}{ships}};\ }
+\DoxyCodeLine{00020\ \ \ std::vector<std::vector<int>>}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \doxymbox{\hyperlink{classBoard_a23f8885f96bb2a5cfd5e1eff2c4129c9}{grid}};\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \doxymbox{\hyperlink{classBoard_a9ee491d4fea680cf69b033374a9fdfcb}{Board}}();}
+\DoxyCodeLine{00041\ \ \ \doxymbox{\hyperlink{classBoard_a8fbba57b4dc14d8d660b3c9ce248c441}{\string~Board}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classBoard_a4126ba53a45374c60bcd401f84d1d59d}{placeShip}}(\doxymbox{\hyperlink{classShip}{Ship}}\ ship);}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classBoard_a55e7f2fe410e1c7dce6fb0bc3f580a33}{attack}}(\doxymbox{\hyperlink{structCoordinates}{Coordinates}}\ \doxymbox{\hyperlink{classBoard_a55e7f2fe410e1c7dce6fb0bc3f580a33}{attack}});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ std::vector<std::vector<int>>\ \doxymbox{\hyperlink{classBoard_a4228a006fffbee5db728d866d4130a1b}{getGrid}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{classBoard_a23f8885f96bb2a5cfd5e1eff2c4129c9}{grid}};\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classBoard_a88fdfecd5920f1742fb9f70976fd933e}{importFromFile}}(\textcolor{keyword}{const}\ std::string\ \&filename);}
+\DoxyCodeLine{00065\ \};}
+
+\end{DoxyCode}
