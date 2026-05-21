@@ -7,6 +7,7 @@
 #pragma once
 
 #include "Ship.h"
+#include <string>
 #include <vector>
 
 /****
@@ -52,4 +53,13 @@ public:
    * @return A pointer to the 2D array representing the game board
    */
   std::vector<std::vector<int>> getGrid() const { return grid; }
+
+  /**
+   * @brief Imports the game board configuration from a file (file format -
+   * coordinates of the ships).
+   *
+   * @param filename The name of the file containing the game board
+   * configuration.
+   */
+  void importFromFile(const std::string &filename);
 };

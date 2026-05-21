@@ -90,10 +90,20 @@ public:
 
   /**
    * @brief a wrapper for Board::attack, to be called if atacking this player
-   * 
+   *
    * @param attack coordinates to be attacked
-   * @return true 
-   * @return false 
+   * @return true
+   * @return false
    */
   bool attacked(Coordinates attack);
+
+  /**
+   * @brief Imports the player's board configuration from a file
+   *
+   * @param filename The name of the file containing the board configuration
+   * (ship placements).
+   */
+  void importBoardFromFile(const std::string &filename) {
+    myBoard.importFromFile(filename);
+  }
 };

@@ -5,6 +5,8 @@
  */
 
 #include "../include/Board.h"
+#include <fstream>
+#include <iostream>
 
 Board::Board() {
   grid.resize(10, std::vector<int>(10, 0)); // Initialize a
@@ -63,4 +65,35 @@ bool Board::attack(Coordinates attack) {
   }
   grid[attack.x][attack.y] = 3; // Mark as miss
   return false;
+}
+
+void Board::importFromFile(const std::string &filename) {
+  std::ifstream file(filename);
+  if (!file.is_open()) {
+    std::cerr << "Error opening file: " << filename << std::endl;
+    exit(1);
+  }
+  int shipSizeCounter[5] = {0}; // To count the number of ships of each size
+  for (int i = 0; i < 5; i++) {
+    int x1, y1, x2, y2;
+    file >> x1 >> y1 >> x2 >> y2;
+    Ship ship(Coordinates(x1, y1), Coordinates(x2, y2));
+    if (!placeShip(ship)) {
+      std::cerr << "Error placing ship from file: " << filename << std::endl;
+      exit(1);
+    }
+    int shipSize = std::max(std::abs(x2 - x1), std::abs(y2 - y1)) + 1;
+    if (shipSize < 1 || shipSize > 5) {
+      std::cerr << "Invalid ship size in file: " << filename << std::endl;
+      exit(1);
+    }
+    shipSizeCounter[shipSize - 1]++;
+  }
+  // Check if the number of ships of each size is correct 2/3/3/4/5
+  if (shipSizeCounter[1] != 1 || shipSizeCounter[2] != 2 ||
+      shipSizeCounter[3] != 1 || shipSizeCounter[4] != 1) {
+    std::cerr << "Incorrect size of ships in file: " << filename << std::endl;
+    exit(1);
+  }
+  file.close();
 }

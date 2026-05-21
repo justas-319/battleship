@@ -10,6 +10,16 @@
 
 void Game::runSetup() {
   ai.setupGrid();
+
+  std::cout << "Import board setup from file? y/n\n";
+  if (std::cin.get() == 'y' || std::cin.get() == 'Y') {
+    std::string filename;
+    std::cout << "Enter filename: ";
+    std::cin >> filename;
+    human.importBoardFromFile(filename);
+    return;
+  }
+
   // printBoard(ai.getMyGrid());
   static const int SHIP_SIZES[] = {5, 4, 3, 3, 2};
   static const int SHIP_COUNT = 5;
