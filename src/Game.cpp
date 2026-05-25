@@ -106,7 +106,19 @@ void Game::printBoard(std::vector<std::vector<int>> board) {
   for (int i = 0; i < 10; ++i) {
     std::cout << i << "|";
     for (int j = 0; j < 10; ++j) {
-      std::cout << board.at(j).at(i) << " ";
+      if (board.at(j).at(i) == 3) {
+        std::cout << "\033[33m" << board.at(j).at(i) << "\033[0m" << " ";
+      }
+      else if (board.at(j).at(i) == 2) {
+        std::cout << "\033[31m" << board.at(j).at(i) << "\033[0m" << " ";
+      }
+      else if (board.at(j).at(i) == 1) {
+        std::cout << "\033[34m" << board.at(j).at(i) << "\033[0m" << " ";
+      }
+      else {
+        std::cout << board.at(j).at(i) << " ";
+      }
+      
     }
     std::cout << std::endl;
   }
@@ -119,7 +131,15 @@ void Game::printTargetBoard(std::vector<std::vector<int>> board) {
     std::cout << i << "|";
     for (int j = 0; j < 10; ++j) {
       if (board.at(j).at(i) != 1) {
-        std::cout << board.at(j).at(i) << " ";
+        if (board.at(j).at(i) == 3) {
+          std::cout << "\033[33m" << board.at(j).at(i) << "\033[0m" << " ";
+        }
+        else if (board.at(j).at(i) == 2) {
+          std::cout << "\033[31m" << board.at(j).at(i) << "\033[0m" << " ";
+        }
+        else {
+          std::cout << board.at(j).at(i) << " ";
+        }
       } else {
         std::cout << "0 ";
       }
