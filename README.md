@@ -75,7 +75,7 @@ battleship/
 
 ## Klasių diagrama
 
-![](https://github.com/justas-319/battleship/blob/main/class_graph.pdf)
+![](https://github.com/justas-319/battleship/blob/main/class_graph.png)
 
 ---
 
