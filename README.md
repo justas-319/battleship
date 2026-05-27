@@ -37,6 +37,32 @@ Game    — valdo žaidimo inicijavimą ir pagrindinį ciklą
 
 ---
 
+## Naudojami projektavimo šablonai
+
+### 1. Strategijos šablonas (Strategy Pattern)
+
+`Player` klasė deklaruoja funkciją `fireShot()`, o `Human` ir `AI` ją realizuoja skirtingai — žmogus nuskaito koordinates iš klaviatūros, AI parenka jas automatiškai. `Game` ciklas kviečia `fireShot()` polimorfiškai, nežinodamas, su kuriuo žaidėju dirba.
+
+```
+Player
+  └── fireShot() = 0       ← bendra sąsaja
+        ├── Human::fireShot()   ← nuskaito iš stdin
+        └── AI::fireShot()      ← atsitiktinė, dar nepanaudota koordinatė
+```
+
+### 2. Fasado šablonas (Facade Pattern)
+
+`Game` klasė slepia vidinę sudėtingumą — `Board`, `Ship`, `Player`, `Coordinates` sąveiką — ir pateikia tik dvi viešas funkcijas: `runSetup()` ir `runGame()`. `main.cpp` nereikia žinoti jokių detalių apie žaidimo eigą.
+
+```cpp
+// main.cpp — visas žaidimas trimis eilutėmis
+Game game;
+game.runSetup();
+game.runGame();
+```
+
+---
+
 ## Projekto struktūra
 
 ```
@@ -75,7 +101,7 @@ battleship/
 
 ## Klasių diagrama
 
-![](https://github.com/justas-319/battleship/blob/main/class_graph.png)
+![](https://github.com/justas-319/battleship/blob/main/class_graph.pdf)
 
 ---
 
